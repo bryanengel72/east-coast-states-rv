@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RV Mechanic Relocation Guide – Southeast Coast</title>
+  <meta name="description" content="A deep-research guide for RV technicians relocating to high-density coastal markets in Georgia, South Carolina, and North Carolina." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Work+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <style>
+    /* ===================== DESIGN TOKENS ===================== */
+    :root, [data-theme="light"] {
+      --color-bg:             #f6f4ef;
+      --color-surface:        #f9f8f4;
+      --color-surface-2:      #fbfaf7;
+      --color-surface-offset: #f0ede7;
+      --color-divider:        #dcd8d0;
+      --color-border:         #ccc9c0;
+      --color-text:           #1e1c16;
+      --color-text-muted:     #6b6a63;
+      --color-text-faint:     #b5b3ac;
+      --color-text-inverse:   #f9f8f4;
+      --color-primary:        #1a6e5e;
+      --color-primary-hover:  #135549;
+      --color-primary-light:  #d0e8e2;
+      --color-accent:         #c45a1a;
+      --color-accent-light:   #f5e0d0;
+      --radius-sm: 0.375rem;
+      --radius-md: 0.5rem;
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 2px oklch(0.2 0.02 80 / 0.06);
+      --shadow-md: 0 4px 16px oklch(0.2 0.02 80 / 0.09);
+      --shadow-lg: 0 12px 40px oklch(0.2 0.02 80 / 0.13);
+      --font-display: 'Instrument Serif', Georgia, serif;
+      --font-body: 'Work Sans', 'Helvetica Neue', sans-serif;
+      --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+      --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+      --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+      --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+      --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+      --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+      --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+      --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.75rem;
+      --space-4: 1rem;    --space-5: 1.25rem; --space-6: 1.5rem;
+      --space-8: 2rem;    --space-10: 2.5rem; --space-12: 3rem;
+      --space-16: 4rem;   --space-20: 5rem;   --space-24: 6rem;
+      --content-narrow: 640px;
+      --content-default: 960px;
+      --content-wide: 1200px;
+      --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --color-bg:             #141310;
+      --color-surface:        #1a1916;
+      --color-surface-2:      #1f1e1b;
+      --color-surface-offset: #252320;
+      --color-divider:        #2e2c28;
+      --color-border:         #3a3835;
+      --color-text:           #e0ddd6;
+      --color-text-muted:     #8a8880;
+      --color-text-faint:     #5a5954;
+      --color-text-inverse:   #1a1916;
+      --color-primary:        #4fa897;
+      --color-primary-hover:  #3d9080;
+      --color-primary-light:  #1e3530;
+      --color-accent:         #e07a3a;
+      --color-accent-light:   #3a2010;
+      --shadow-sm: 0 1px 2px oklch(0 0 0 / 0.25);
+      --shadow-md: 0 4px 16px oklch(0 0 0 / 0.35);
+      --shadow-lg: 0 12px 40px oklch(0 0 0 / 0.45);
+    }
+
+    /* ===================== BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+      scroll-padding-top: 80px;
+    }
+    body {
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: var(--text-base);
+      color: var(--color-text);
+      background: var(--color-bg);
+      line-height: 1.65;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    h1,h2,h3,h4 { font-family: var(--font-display); text-wrap: balance; line-height: 1.15; }
+    p { max-width: 68ch; text-wrap: pretty; }
+    a { color: var(--color-primary); text-decoration: none; transition: color var(--transition); }
+    a:hover { color: var(--color-primary-hover); text-decoration: underline; }
+    :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 3px; border-radius: var(--radius-sm); }
+    button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+
+    @supports (animation-timeline: scroll()) {
+      .fade-in {
+        opacity: 0;
+        animation: fadein linear both;
+        animation-timeline: view();
+        animation-range: entry 0% entry 60%;
+      }
+      @keyframes fadein { to { opacity: 1; } }
+    }
+
+    /* ===================== HEADER ===================== */
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: oklch(from var(--color-bg) l c h / 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      box-shadow: var(--shadow-sm);
+    }
+    .header-inner {
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      padding: var(--space-4) var(--space-6);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      color: var(--color-text);
+      text-decoration: none;
+    }
+    .logo:hover { text-decoration: none; color: var(--color-primary); }
+    .logo svg { flex-shrink: 0; }
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .nav a {
+      font-size: var(--text-sm);
+      font-weight: 500;
+      color: var(--color-text-muted);
+      padding: var(--space-2) var(--space-3);
+      border-radius: var(--radius-md);
+      transition: color var(--transition), background var(--transition);
+    }
+    .nav a:hover { color: var(--color-text); background: var(--color-surface-offset); text-decoration: none; }
+    .theme-toggle {
+      padding: var(--space-2);
+      border-radius: var(--radius-md);
+      color: var(--color-text-muted);
+      transition: color var(--transition), background var(--transition);
+      display: flex;
+      align-items: center;
+    }
+    .theme-toggle:hover { color: var(--color-text); background: var(--color-surface-offset); }
+
+    /* ===================== HERO ===================== */
+    .hero {
+      position: relative;
+      min-height: 75vh;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        oklch(0.1 0.01 80 / 0.92) 0%,
+        oklch(0.1 0.01 80 / 0.6) 40%,
+        oklch(0.1 0.01 80 / 0.15) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      padding: var(--space-16) var(--space-6);
+      width: 100%;
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      background: oklch(from var(--color-primary) l c h / 0.15);
+      border: 1px solid oklch(from var(--color-primary) l c h / 0.3);
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      margin-bottom: var(--space-4);
+    }
+    .hero h1 {
+      font-size: var(--text-3xl);
+      color: #f5f3ee;
+      max-width: 800px;
+      margin-bottom: var(--space-4);
+      font-style: italic;
+    }
+    .hero-sub {
+      font-size: var(--text-lg);
+      color: oklch(0.85 0.01 80);
+      max-width: 560px;
+      margin-bottom: var(--space-8);
+      font-family: var(--font-body);
+      font-weight: 300;
+    }
+    .hero-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-3);
+    }
+    .btn-primary {
+      background: var(--color-primary);
+      color: #fff;
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-weight: 600;
+      font-family: var(--font-body);
+      transition: background var(--transition), box-shadow var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .btn-primary:hover { background: var(--color-primary-hover); box-shadow: var(--shadow-md); text-decoration: none; color: #fff; }
+    .btn-ghost {
+      background: oklch(1 0 0 / 0.1);
+      color: #f5f3ee;
+      border: 1px solid oklch(1 0 0 / 0.25);
+      padding: var(--space-3) var(--space-6);
+      border-radius: var(--radius-md);
+      font-size: var(--text-sm);
+      font-weight: 500;
+      font-family: var(--font-body);
+      transition: background var(--transition), border-color var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+    .btn-ghost:hover { background: oklch(1 0 0 / 0.18); text-decoration: none; color: #f5f3ee; }
+
+    /* ===================== STAT STRIP ===================== */
+    .stat-strip {
+      background: var(--color-primary);
+      padding: var(--space-6) var(--space-6);
+    }
+    .stat-strip-inner {
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: var(--space-6);
+    }
+    .stat-item {
+      text-align: center;
+      color: #fff;
+    }
+    .stat-number {
+      font-family: var(--font-display);
+      font-size: var(--text-2xl);
+      line-height: 1;
+      display: block;
+      margin-bottom: var(--space-1);
+    }
+    .stat-label {
+      font-size: var(--text-xs);
+      opacity: 0.8;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+    }
+
+    /* ===================== SECTION WRAPPERS ===================== */
+    .section {
+      padding: clamp(var(--space-12), 7vw, var(--space-24)) var(--space-6);
+    }
+    .container {
+      max-width: var(--content-wide);
+      margin-inline: auto;
+    }
+    .container-narrow {
+      max-width: var(--content-default);
+      margin-inline: auto;
+    }
+    .section-eyebrow {
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      margin-bottom: var(--space-3);
+      display: block;
+    }
+    .section-title {
+      font-size: var(--text-2xl);
+      margin-bottom: var(--space-4);
+      color: var(--color-text);
+    }
+    .section-lead {
+      font-size: var(--text-lg);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-10);
+      max-width: 62ch;
+      font-weight: 300;
+    }
+
+    /* ===================== OPPORTUNITY SECTION ===================== */
+    .opportunity-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    .opportunity-text { }
+    .opportunity-text p {
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+      font-size: var(--text-base);
+    }
+    .opportunity-img {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3;
+    }
+    .opportunity-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .highlight-box {
+      background: var(--color-primary-light);
+      border: 1px solid oklch(from var(--color-primary) l c h / 0.2);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5) var(--space-6);
+      margin-top: var(--space-6);
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-4);
+    }
+    .highlight-item {
+      text-align: center;
+    }
+    .highlight-num {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      color: var(--color-primary);
+      display: block;
+      line-height: 1;
+      margin-bottom: var(--space-1);
+    }
+    .highlight-desc {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      font-weight: 500;
+    }
+
+    /* ===================== RANKED LOCATIONS ===================== */
+    .locations-section {
+      background: var(--color-surface);
+    }
+    .location-cards {
+      display: grid;
+      gap: var(--space-6);
+    }
+    .location-card {
+      background: var(--color-surface-2);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      transition: box-shadow var(--transition);
+    }
+    .location-card:hover { box-shadow: var(--shadow-md); }
+    .location-card.featured {
+      border-color: oklch(from var(--color-primary) l c h / 0.35);
+      box-shadow: 0 0 0 1px oklch(from var(--color-primary) l c h / 0.2), var(--shadow-md);
+    }
+    .card-img {
+      position: relative;
+      overflow: hidden;
+    }
+    .card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .location-card:hover .card-img img { transform: scale(1.04); }
+    .rank-badge {
+      position: absolute;
+      top: var(--space-3);
+      left: var(--space-3);
+      background: var(--color-primary);
+      color: #fff;
+      font-family: var(--font-body);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+      letter-spacing: 0.05em;
+    }
+    .rank-badge.top { background: var(--color-accent); }
+    .season-badge {
+      position: absolute;
+      bottom: var(--space-3);
+      left: var(--space-3);
+      background: oklch(0.1 0.01 80 / 0.75);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: var(--text-xs);
+      font-weight: 500;
+      padding: var(--space-1) var(--space-2);
+      border-radius: var(--radius-md);
+    }
+    .card-body {
+      padding: var(--space-6) var(--space-8);
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
+    }
+    .card-title {
+      font-size: var(--text-xl);
+      color: var(--color-text);
+    }
+    .card-state {
+      font-size: var(--text-xs);
+      color: var(--color-text-muted);
+      font-family: var(--font-body);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-top: var(--space-1);
+    }
+    .card-density {
+      background: var(--color-accent-light);
+      color: var(--color-accent);
+      border-radius: var(--radius-md);
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--text-xs);
+      font-weight: 700;
+      text-align: center;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .card-density span {
+      display: block;
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      line-height: 1;
+      margin-bottom: 2px;
+    }
+    .card-desc {
+      color: var(--color-text-muted);
+      font-size: var(--text-base);
+      margin-bottom: var(--space-5);
+      flex: 1;
+    }
+    .parks-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      margin-bottom: var(--space-5);
+    }
+    .parks-list li {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+    .parks-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--color-primary);
+      flex-shrink: 0;
+    }
+    .parks-list strong { color: var(--color-text); font-weight: 600; }
+    .card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+    .tag {
+      background: var(--color-surface-offset);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.1);
+      color: var(--color-text-muted);
+      font-size: var(--text-xs);
+      font-weight: 500;
+      padding: var(--space-1) var(--space-3);
+      border-radius: var(--radius-full);
+    }
+    .tag.green { background: var(--color-primary-light); color: var(--color-primary); border-color: oklch(from var(--color-primary) l c h / 0.2); }
+    .tag.orange { background: var(--color-accent-light); color: var(--color-accent); border-color: oklch(from var(--color-accent) l c h / 0.2); }
+
+    /* ===================== MEGA-PARK TABLE ===================== */
+    .table-section { }
+    .parks-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-xl);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.09);
+      box-shadow: var(--shadow-sm);
+    }
+    .parks-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      background: var(--color-surface-2);
+    }
+    .parks-table thead {
+      background: var(--color-primary);
+      color: #fff;
+    }
+    .parks-table thead th {
+      padding: var(--space-3) var(--space-5);
+      text-align: left;
+      font-weight: 600;
+      font-size: var(--text-xs);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .parks-table tbody tr {
+      border-bottom: 1px solid var(--color-divider);
+      transition: background var(--transition);
+    }
+    .parks-table tbody tr:last-child { border-bottom: none; }
+    .parks-table tbody tr:hover { background: var(--color-surface-offset); }
+    .parks-table td {
+      padding: var(--space-4) var(--space-5);
+      vertical-align: middle;
+      color: var(--color-text-muted);
+    }
+    .parks-table td:first-child { color: var(--color-text); font-weight: 600; }
+    .sites-count {
+      font-family: var(--font-display);
+      font-size: var(--text-lg);
+      color: var(--color-primary);
+    }
+    .ocean-yes {
+      color: var(--color-primary);
+      font-weight: 600;
+    }
+    .star { color: var(--color-accent); }
+
+    /* ===================== STRATEGY SECTION ===================== */
+    .strategy-section {
+      background: var(--color-surface);
+    }
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: var(--space-5);
+      margin-top: var(--space-8);
+    }
+    .strategy-card {
+      background: var(--color-surface-2);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.08);
+      border-radius: var(--radius-xl);
+      padding: var(--space-6);
+      transition: box-shadow var(--transition);
+    }
+    .strategy-card:hover { box-shadow: var(--shadow-md); }
+    .strategy-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--color-primary-light);
+      border-radius: var(--radius-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-4);
+      color: var(--color-primary);
+      font-size: 1.3rem;
+    }
+    .strategy-card h3 {
+      font-size: var(--text-lg);
+      margin-bottom: var(--space-2);
+      color: var(--color-text);
+    }
+    .strategy-card p {
+      font-size: var(--text-sm);
+      color: var(--color-text-muted);
+    }
+
+    /* ===================== SEASONAL CALENDAR ===================== */
+    .calendar-section { }
+    .season-table-wrap {
+      overflow-x: auto;
+      border-radius: var(--radius-xl);
+      border: 1px solid oklch(from var(--color-text) l c h / 0.09);
+      box-shadow: var(--shadow-sm);
+      margin-top: var(--space-8);
+    }
+    .season-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: var(--text-sm);
+      background: var(--color-surface-2);
+      min-width: 640px;
+    }
+    .season-table thead { background: var(--color-surface-offset); }
+    .season-table th {
+      padding: var(--space-3) var(--space-4);
+      text-align: center;
+      font-size: var(--text-xs);
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+      border-bottom: 1px solid var(--color-divider);
+    }
+    .season-table th:first-child { text-align: left; }
+    .season-table td {
+      padding: var(--space-3) var(--space-4);
+      text-align: center;
+      border-bottom: 1px solid var(--color-divider);
+      font-size: var(--text-xs);
+      font-weight: 600;
+    }
+    .season-table td:first-child { text-align: left; color: var(--color-text); font-weight: 600; font-size: var(--text-sm); }
+    .season-table tr:last-child td { border-bottom: none; }
+    .s-peak { background: oklch(from var(--color-primary) l c h / 0.18); color: var(--color-primary); }
+    .s-good { background: oklch(from var(--color-accent) l c h / 0.12); color: var(--color-accent); }
+    .s-slow { background: var(--color-surface-offset); color: var(--color-text-faint); }
+
+    /* ===================== DIVIDER ===================== */
+    .section-divider {
+      height: 1px;
+      background: var(--color-divider);
+      max-width: var(--content-wide);
+      margin-inline: auto;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--color-surface);
+      border-top: 1px solid var(--color-divider);
+      padding: var(--space-8) var(--space-6);
+    }
+    .footer-inner {
+      max-width: var(--content-wide);
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+    }
+    .footer-text {
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+    }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 900px) {
+      .location-card { grid-template-columns: 1fr; }
+      .card-img { height: 220px; }
+      .opportunity-grid { grid-template-columns: 1fr; }
+      .highlight-box { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .hero h1 { font-size: clamp(2rem, 8vw, 3rem); }
+      .highlight-box { grid-template-columns: 1fr 1fr; }
+      .nav { display: none; }
+      .card-header { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <svg aria-label="RV Wrench logo" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="32" height="32" rx="8" fill="var(--color-primary)"/>
+        <path d="M8 23L13 11h2.5l3.5 8.5 2.5-5.5h2.5L19 23h-2.5l-3.5-8-2.5 8H8z" fill="white"/>
+        <circle cx="23" cy="11" r="2.5" stroke="white" stroke-width="1.5" fill="none"/>
+        <path d="M21 12.5L19 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      RV Relocation Guide
+    </a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#opportunity">Opportunity</a>
+      <a href="#locations">Locations</a>
+      <a href="#parks">Parks</a>
+      <a href="#strategy">Strategy</a>
+      <a href="#seasonal">Seasonal</a>
+    </nav>
+    <button class="theme-toggle" data-theme-toggle aria-label="Switch to dark mode">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/1dfce923-846b-4b99-95e8-036a2edabbbc.png" alt="Coastal RV resort at golden hour" width="1600" height="900" loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">Deep Research Report · June 2026</span>
+    <h1>Where the RVs Are —<br>and Why You Should Be There</h1>
+    <p class="hero-sub">A relocation guide for RV technicians targeting the highest-density coastal markets in Georgia, South Carolina &amp; North Carolina.</p>
+    <div class="hero-cta-row">
+      <a href="#locations" class="btn-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        View Top Locations
+      </a>
+      <a href="#parks" class="btn-ghost">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        200+ Site Parks
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- STAT STRIP -->
+<div class="stat-strip">
+  <div class="stat-strip-inner">
+    <div class="stat-item fade-in">
+      <span class="stat-number">7,000+</span>
+      <span class="stat-label">RV sites in Myrtle Beach alone</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-number">17,000</span>
+      <span class="stat-label">RV techs nationwide — 20% shortage</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-number">$100/hr</span>
+      <span class="stat-label">Mobile mechanic billing rate</span>
+    </div>
+    <div class="stat-item fade-in">
+      <span class="stat-number">80%</span>
+      <span class="stat-label">Repairs done outside a dealership</span>
+    </div>
+  </div>
+</div>
+
+<!-- OPPORTUNITY -->
+<section class="section" id="opportunity">
+  <div class="container">
+    <div class="opportunity-grid">
+      <div class="opportunity-text fade-in">
+        <span class="section-eyebrow">The Market Opportunity</span>
+        <h2 class="section-title">A National Technician Shortage Meets the Most RV-Dense Coastline in America</h2>
+        <p>There are only approximately <strong>17,000 RV service technicians nationwide</strong>, and the industry estimates it needs at least 20% more just to meet current demand. Dealership wait times in many markets have reached six weeks — driving explosive demand for mobile mechanics who can work campground-to-campground.</p>
+        <p>The Southeast Atlantic coast is home to some of the largest RV resorts on Earth. The single mile-long stretch of South Kings Highway in Myrtle Beach alone holds three mega-parks totaling over 3,000 overnight sites. That's a mechanic's dream route.</p>
+        <div class="highlight-box fade-in">
+          <div class="highlight-item">
+            <span class="highlight-num">$50–$100</span>
+            <span class="highlight-desc">Per hour, mobile RV mechanic</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-num">3,447</span>
+            <span class="highlight-desc">Sites at Ocean Lakes alone</span>
+          </div>
+          <div class="highlight-item">
+            <span class="highlight-num">0</span>
+            <span class="highlight-desc">Special permits to operate in SE</span>
+          </div>
+        </div>
+      </div>
+      <div class="opportunity-img fade-in">
+        <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/2b8b2371-cb12-4a33-97e4-5f7991245214.png" alt="RV mechanic working at a coastal campground" width="680" height="510" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- RANKED LOCATIONS -->
+<section class="section locations-section" id="locations">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-eyebrow">Ranked Relocations</span>
+      <h2 class="section-title">Five Coastal Markets, Prioritized by RV Density</h2>
+      <p class="section-lead">Every location below prioritizes parks with 200+ RV sites — the volume threshold that sustains a full-time mobile mechanic business year-round.</p>
+    </div>
+
+    <div class="location-cards">
+
+      <!-- #1 MYRTLE BEACH -->
+      <div class="location-card featured fade-in">
+        <div class="card-img">
+          <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/425b94e0-74de-4ac0-a2ed-8fe04f63f1e3.png" alt="Aerial view of Myrtle Beach Grand Strand coastline" width="340" height="280" loading="lazy">
+          <div class="rank-badge top">🏆 #1 TOP PICK</div>
+          <div class="season-badge">☀️ Summer Peak · Year-Round Residents</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Myrtle Beach<br><em>Grand Strand</em></h3>
+              <div class="card-state">South Carolina</div>
+            </div>
+            <div class="card-density">
+              <span>7,000+</span>
+              RV Sites
+            </div>
+          </div>
+          <p class="card-desc">The highest single-corridor RV density in the Southeast. The Grand Strand stretches 60 miles of beach and welcomes over 17 million visitors annually. As of April 2026, Myrtle Beach was ranked the #1 most-searched domestic summer travel destination in the U.S. Three mega-parks sit within a 3-mile stretch of highway — an efficient, mobile-mechanic dream route.</p>
+          <ul class="parks-list">
+            <li><strong>Ocean Lakes</strong> — 3,447 total sites (largest campground on the East Coast)</li>
+            <li><strong>Lakewood Camping Resort</strong> — 1,300 full hookup sites, oceanfront</li>
+            <li><strong>Myrtle Beach Travel Park</strong> — 1,188 sites, 125-acre oceanfront</li>
+            <li><strong>Sun Outdoors Myrtle Beach</strong> — 700+ RV sites near Conway</li>
+            <li><strong>Myrtle Beach State Park</strong> — 278 sites, full hookup beachfront</li>
+          </ul>
+          <div class="card-tags">
+            <span class="tag green">✓ Oceanfront</span>
+            <span class="tag green">✓ Year-Round Residents</span>
+            <span class="tag orange">Summer Peak</span>
+            <span class="tag">Avg. Rent ~$1,370/mo</span>
+            <span class="tag">65 RV Tech Jobs in SC</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- #2 HILTON HEAD -->
+      <div class="location-card fade-in">
+        <div class="card-img">
+          <img src="https://picsum.photos/seed/hiltonhead/680/480" alt="Hilton Head Island coastal resort" width="340" height="280" loading="lazy">
+          <div class="rank-badge">#2</div>
+          <div class="season-badge">🌊 Luxury · Year-Round</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Hilton Head Island</h3>
+              <div class="card-state">South Carolina</div>
+            </div>
+            <div class="card-density">
+              <span>941+</span>
+              Premium Sites
+            </div>
+          </div>
+          <p class="card-desc">Three luxury RV resorts totaling ~941 premium sites. The clientele is high-income (median household income ~$98,779) with Class A motorcoaches and complex systems. Customers here are willing to pay top-tier rates for quality service. No true off-season — strong year-round traffic from snowbirds and summer resort visitors alike.</p>
+          <ul class="parks-list">
+            <li><strong>Hilton Head Island Motorcoach Resort</strong> — 400 paved lots, south end</li>
+            <li><strong>Hilton Head National RV Resort</strong> — 341 paved sites, Bluffton</li>
+            <li><strong>Hilton Head Harbor RV Resort &amp; Marina</strong> — 200 sites, waterfront</li>
+          </ul>
+          <div class="card-tags">
+            <span class="tag green">✓ Year-Round Demand</span>
+            <span class="tag orange">Premium Billing Rate</span>
+            <span class="tag">Class A Motorcoach Focus</span>
+            <span class="tag">Rent ~$2,272/mo</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- #3 GOLDEN ISLES -->
+      <div class="location-card fade-in">
+        <div class="card-img">
+          <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/019c8e58-00b3-4f55-8497-29adf024dca7.png" alt="Jekyll Island and Golden Isles Georgia coastal aerial" width="340" height="280" loading="lazy">
+          <div class="rank-badge">#3</div>
+          <div class="season-badge">🍂 Snowbird Peak Oct–April</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Brunswick /<br><em>Golden Isles</em></h3>
+              <div class="card-state">Georgia</div>
+            </div>
+            <div class="card-density">
+              <span>350+</span>
+              Sites Growing
+            </div>
+          </div>
+          <p class="card-desc">Georgia's Golden Isles (Jekyll Island, St. Simons, Sea Island) are a year-round destination, especially popular with snowbirds Oct–April — a direct inverse of Florida's off-season. Brunswick is just 65 miles from St. James, FL, making it an easy test market. Coastal GA RV Resort explicitly states it never closes for an off-season. Southern Retreat RV Park recently expanded to 350+ sites.</p>
+          <ul class="parks-list">
+            <li><strong>Southern Retreat RV Park</strong> — 350+ FHU sites, big-rig friendly, on-site restaurant</li>
+            <li><strong>Jekyll Island Campground</strong> — 179–206 sites, state-managed, half-mile to beach</li>
+            <li><strong>Coastal GA RV Resort</strong> — ~160 sites, open 365 days/year</li>
+          </ul>
+          <div class="card-tags">
+            <span class="tag green">✓ Year-Round Open</span>
+            <span class="tag green">✓ I-95 RV Traffic</span>
+            <span class="tag orange">Snowbird Peak</span>
+            <span class="tag">65 mi from St. James, FL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- #4 OUTER BANKS -->
+      <div class="location-card fade-in">
+        <div class="card-img">
+          <img src="https://user-gen-media-assets.s3.amazonaws.com/seedream_images/06031191-57ae-40bb-bdb6-6f8d1bec7a1b.png" alt="Aerial view of Outer Banks NC barrier island" width="340" height="280" loading="lazy">
+          <div class="rank-badge">#4</div>
+          <div class="season-badge">⚓ Memorial Day – Labor Day</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Outer Banks</h3>
+              <div class="card-state">North Carolina</div>
+            </div>
+            <div class="card-density">
+              <span>422+</span>
+              NPS + Private
+            </div>
+          </div>
+          <p class="card-desc">The OBX barrier island geography is a competitive moat — the limited road access (one highway in and out) dramatically reduces competition from mainland mechanics. Camp Hatteras is the anchor with 422 full-hookup concrete-pad sites spanning 50 oceanfront-to-soundfront acres. NPS campgrounds add 200+ dry-camp sites whose visitors still need mobile mechanics.</p>
+          <ul class="parks-list">
+            <li><strong>Camp Hatteras RV Resort</strong> — 422 sites, ocean-to-soundfront, Rodanthe NC</li>
+            <li><strong>Cape Point NPS Campground</strong> — 202 sites, Buxton (no hookups — repair traffic!)</li>
+            <li><strong>Topsail Sound RV Park</strong> — 345 extra-large lots, near Wilmington</li>
+          </ul>
+          <div class="card-tags">
+            <span class="tag green">✓ Low Competition</span>
+            <span class="tag green">✓ Oceanfront</span>
+            <span class="tag orange">Summer Only</span>
+            <span class="tag">Geographic Moat</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- #5 WILMINGTON -->
+      <div class="location-card fade-in">
+        <div class="card-img">
+          <img src="https://picsum.photos/seed/wilmington-nc-beach/680/480" alt="Wilmington North Carolina coastal area" width="340" height="280" loading="lazy">
+          <div class="rank-badge">#5</div>
+          <div class="season-badge">🌴 Multi-Beach Access</div>
+        </div>
+        <div class="card-body">
+          <div class="card-header">
+            <div>
+              <h3 class="card-title">Wilmington /<br><em>Cape Fear Coast</em></h3>
+              <div class="card-state">North Carolina</div>
+            </div>
+            <div class="card-density">
+              <span>345+</span>
+              Sites (Topsail)
+            </div>
+          </div>
+          <p class="card-desc">Wilmington offers balanced year-round market access across multiple beach communities — Wrightsville Beach, Carolina Beach, Kure Beach, and Topsail Island — all within a short drive. Lower cost of living than Hilton Head, less saturated market than Myrtle Beach, full city amenities including parts distributors and supply chains easily accessible.</p>
+          <ul class="parks-list">
+            <li><strong>Topsail Sound RV Park</strong> — 345 large lots, access to Topsail Island beaches</li>
+            <li><strong>Wilmington KOA Holiday</strong> — near Wrightsville Beach &amp; Surf City</li>
+            <li><strong>Carolina Beach State Park</strong> — full hookup sites, 12 mi south of Wilmington</li>
+          </ul>
+          <div class="card-tags">
+            <span class="tag green">✓ Multi-Beach Reach</span>
+            <span class="tag">Affordable Rent $1,300–1,700</span>
+            <span class="tag">Parts Supply Access</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PARKS TABLE -->
+<section class="section" id="parks">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-eyebrow">200+ Site Parks Master List</span>
+      <h2 class="section-title">Every Major RV Park Worth Targeting</h2>
+      <p class="section-lead">Sorted by site count. These are your primary business targets — campground managers at these parks maintain mechanic referral lists and can provide a nearly self-sustaining workflow.</p>
+    </div>
+    <div class="parks-table-wrap fade-in">
+      <table class="parks-table" aria-label="RV parks sorted by site count">
+        <thead>
+          <tr>
+            <th>Park Name</th>
+            <th>Sites</th>
+            <th>Location</th>
+            <th>Oceanfront?</th>
+            <th>Type</th>
+            <th>Peak Season</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="star">★</span> Ocean Lakes Family Campground</td>
+            <td><span class="sites-count">3,447</span></td>
+            <td>Myrtle Beach, SC</td>
+            <td class="ocean-yes">✓ 1 mile beachfront</td>
+            <td>Mega-resort</td>
+            <td>Year-round + Summer peak</td>
+          </tr>
+          <tr>
+            <td><span class="star">★</span> Lakewood Camping Resort</td>
+            <td><span class="sites-count">1,300</span></td>
+            <td>Myrtle Beach, SC</td>
+            <td class="ocean-yes">✓ 300-acre oceanfront</td>
+            <td>Mega-resort</td>
+            <td>Year-round + Summer peak</td>
+          </tr>
+          <tr>
+            <td><span class="star">★</span> Myrtle Beach Travel Park</td>
+            <td><span class="sites-count">1,188</span></td>
+            <td>Myrtle Beach, SC</td>
+            <td class="ocean-yes">✓ 125-acre oceanfront</td>
+            <td>Mega-resort</td>
+            <td>Year-round + Summer peak</td>
+          </tr>
+          <tr>
+            <td>Sun Outdoors Myrtle Beach</td>
+            <td><span class="sites-count">700+</span></td>
+            <td>Conway, SC</td>
+            <td>❌ Inland, 10 min drive</td>
+            <td>Resort</td>
+            <td>Summer peak</td>
+          </tr>
+          <tr>
+            <td>Topsail Sound RV Park</td>
+            <td><span class="sites-count">345</span></td>
+            <td>Holly Ridge, NC</td>
+            <td>Near Topsail Beach</td>
+            <td>Large RV park</td>
+            <td>Summer</td>
+          </tr>
+          <tr>
+            <td>Hilton Head Island Motorcoach Resort</td>
+            <td><span class="sites-count">400</span></td>
+            <td>Hilton Head, SC</td>
+            <td class="ocean-yes">✓ South end island</td>
+            <td>Luxury resort</td>
+            <td>Year-round</td>
+          </tr>
+          <tr>
+            <td>Hilton Head National RV Resort</td>
+            <td><span class="sites-count">341</span></td>
+            <td>Bluffton, SC</td>
+            <td>❌ Golf course/inland</td>
+            <td>Luxury resort</td>
+            <td>Year-round</td>
+          </tr>
+          <tr>
+            <td>Camp Hatteras RV Resort</td>
+            <td><span class="sites-count">422</span></td>
+            <td>Rodanthe, NC</td>
+            <td class="ocean-yes">✓ Ocean-to-soundfront</td>
+            <td>Full-service resort</td>
+            <td>Memorial Day–Labor Day</td>
+          </tr>
+          <tr>
+            <td>Southern Retreat RV Park</td>
+            <td><span class="sites-count">350+</span></td>
+            <td>Brunswick, GA</td>
+            <td>7 mi to Jekyll/St. Simons</td>
+            <td>Full hookup, big-rig</td>
+            <td>Year-round, snowbirds Oct–Apr</td>
+          </tr>
+          <tr>
+            <td>Hilton Head Harbor RV Resort</td>
+            <td><span class="sites-count">200</span></td>
+            <td>Hilton Head, SC</td>
+            <td class="ocean-yes">✓ Skull Creek waterfront</td>
+            <td>Luxury marina resort</td>
+            <td>Year-round</td>
+          </tr>
+          <tr>
+            <td>Myrtle Beach State Park</td>
+            <td><span class="sites-count">278</span></td>
+            <td>Myrtle Beach, SC</td>
+            <td class="ocean-yes">✓ Beachfront</td>
+            <td>State park</td>
+            <td>Year-round</td>
+          </tr>
+          <tr>
+            <td>Jekyll Island Campground</td>
+            <td><span class="sites-count">206</span></td>
+            <td>Jekyll Island, GA</td>
+            <td class="ocean-yes">✓ 0.5 mi to Driftwood Beach</td>
+            <td>State-managed</td>
+            <td>Year-round</td>
+          </tr>
+          <tr>
+            <td>Cape Point NPS Campground</td>
+            <td><span class="sites-count">202</span></td>
+            <td>Buxton, NC</td>
+            <td class="ocean-yes">✓ Hatteras Island</td>
+            <td>National Park (no hookups)</td>
+            <td>Summer</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- STRATEGY -->
+<section class="section strategy-section" id="strategy">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-eyebrow">Business Strategy</span>
+      <h2 class="section-title">How to Hit the Ground Running</h2>
+      <p class="section-lead">Five proven moves that turn relocation into immediate revenue — from campground manager relationships to platform partnerships.</p>
+    </div>
+    <div class="strategy-grid">
+      <div class="strategy-card fade-in">
+        <div class="strategy-icon">🤝</div>
+        <h3>Build Campground Relationships First</h3>
+        <p>Introduce yourself to managers at Ocean Lakes, Lakewood, and Myrtle Beach Travel Park. Most parks maintain informal referral lists of trusted mobile mechanics. Getting on those three lists in a single day creates a nearly self-sustaining workflow.</p>
+      </div>
+      <div class="strategy-card fade-in">
+        <div class="strategy-icon">🏅</div>
+        <h3>Get RVIA/RVTI Certified</h3>
+        <p>The RV Technical Institute offers certifications that justify higher billing rates and increase trust with campground managers. Certified techs command premium labor rates ($100+/hr at Hilton Head). It also signals professionalism to Class A motorcoach owners.</p>
+      </div>
+      <div class="strategy-card fade-in">
+        <div class="strategy-icon">📍</div>
+        <h3>The Myrtle Beach 3-Mile Route</h3>
+        <p>Ocean Lakes, Lakewood, and Myrtle Beach Travel Park all sit within a 3-mile stretch of S. Kings Highway. A mobile mechanic can efficiently service customers at all three parks in a single day — 3,000+ potential customers without leaving one road.</p>
+      </div>
+      <div class="strategy-card fade-in">
+        <div class="strategy-icon">📱</div>
+        <h3>List on RVFix &amp; Mobile Platforms</h3>
+        <p>Platforms like RVFix (by Bish's RV) send repair job requests directly to local mobile techs at no upfront cost. Combined with a Google Business Profile targeting campground keywords, this provides steady inbound leads from day one without advertising spend.</p>
+      </div>
+      <div class="strategy-card fade-in">
+        <div class="strategy-icon">🔄</div>
+        <h3>The Dual-Base Year-Round Strategy</h3>
+        <p>Summer in Myrtle Beach (peak tourist season). Winter in Brunswick/Golden Isles, GA (snowbird season, never closes). This two-base rotation captures both peak seasons with minimal dead time — solving the exact St. James off-season problem permanently.</p>
+      </div>
+      <div class="strategy-card fade-in">
+        <div class="strategy-icon">⚡</div>
+        <h3>OBX Geographic Moat</h3>
+        <p>The Outer Banks' single-road access means mainland mechanics rarely make the trip. A local mechanic becomes essentially the only option for 422+ Camp Hatteras guests and 200+ NPS dry campers needing repairs. Low competition, captive market.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SEASONAL CALENDAR -->
+<section class="section calendar-section" id="seasonal">
+  <div class="container">
+    <div class="fade-in">
+      <span class="section-eyebrow">Seasonal Demand Calendar</span>
+      <h2 class="section-title">When Each Market Is Busiest</h2>
+      <p class="section-lead">Use this to plan a two-base rotation that keeps you in peak-demand territory every month of the year.</p>
+    </div>
+    <div class="season-table-wrap fade-in">
+      <table class="season-table" aria-label="Seasonal demand calendar by location">
+        <thead>
+          <tr>
+            <th>Market</th>
+            <th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th>
+            <th>May</th><th>Jun</th><th>Jul</th><th>Aug</th>
+            <th>Sep</th><th>Oct</th><th>Nov</th><th>Dec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Myrtle Beach, SC</td>
+            <td class="s-slow">—</td><td class="s-slow">—</td><td class="s-good">Mid</td><td class="s-good">Mid</td>
+            <td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td>
+            <td class="s-good">Mid</td><td class="s-good">Mid</td><td class="s-slow">—</td><td class="s-slow">—</td>
+          </tr>
+          <tr>
+            <td>Hilton Head, SC</td>
+            <td class="s-good">Mid</td><td class="s-good">Mid</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td>
+            <td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td>
+            <td class="s-peak">Peak</td><td class="s-good">Mid</td><td class="s-good">Mid</td><td class="s-good">Mid</td>
+          </tr>
+          <tr>
+            <td>Golden Isles, GA</td>
+            <td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td>
+            <td class="s-good">Mid</td><td class="s-good">Mid</td><td class="s-good">Mid</td><td class="s-good">Mid</td>
+            <td class="s-good">Mid</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td>
+          </tr>
+          <tr>
+            <td>Outer Banks, NC</td>
+            <td class="s-slow">—</td><td class="s-slow">—</td><td class="s-slow">—</td><td class="s-good">Mid</td>
+            <td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td>
+            <td class="s-good">Mid</td><td class="s-slow">—</td><td class="s-slow">—</td><td class="s-slow">—</td>
+          </tr>
+          <tr>
+            <td>Wilmington, NC</td>
+            <td class="s-slow">—</td><td class="s-slow">—</td><td class="s-good">Mid</td><td class="s-good">Mid</td>
+            <td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td><td class="s-peak">Peak</td>
+            <td class="s-good">Mid</td><td class="s-good">Mid</td><td class="s-slow">—</td><td class="s-slow">—</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div style="display:flex;gap:var(--space-4);flex-wrap:wrap;margin-top:var(--space-4);">
+      <span style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-text-muted);">
+        <span style="width:24px;height:14px;border-radius:var(--radius-sm);background:oklch(from var(--color-primary) l c h / 0.18);display:inline-block;"></span> Peak demand
+      </span>
+      <span style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-text-muted);">
+        <span style="width:24px;height:14px;border-radius:var(--radius-sm);background:oklch(from var(--color-accent) l c h / 0.12);display:inline-block;"></span> Moderate
+      </span>
+      <span style="display:flex;align-items:center;gap:var(--space-2);font-size:var(--text-xs);color:var(--color-text-muted);">
+        <span style="width:24px;height:14px;border-radius:var(--radius-sm);background:var(--color-surface-offset);display:inline-block;"></span> Slow season
+      </span>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="logo" style="margin-bottom:var(--space-2);">
+        <svg aria-label="RV Wrench logo" width="24" height="24" viewBox="0 0 32 32" fill="none">
+          <rect width="32" height="32" rx="8" fill="var(--color-primary)"/>
+          <path d="M8 23L13 11h2.5l3.5 8.5 2.5-5.5h2.5L19 23h-2.5l-3.5-8-2.5 8H8z" fill="white"/>
+          <circle cx="23" cy="11" r="2.5" stroke="white" stroke-width="1.5" fill="none"/>
+          <path d="M21 12.5L19 20" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        RV Relocation Guide
+      </div>
+      <p class="footer-text">Deep research compiled June 2026. Site counts may vary; contact individual parks to confirm availability.<br>Prepared for a relocating RV mechanic from St. James, FL.</p>
+    </div>
+    <p class="footer-text">Research by Perplexity AI · All data sourced from primary campground websites, Good Sam, RVIA, and Bureau of Labor Statistics.</p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const t = document.querySelector('[data-theme-toggle]');
+    const r = document.documentElement;
+    let d = matchMedia('(prefers-color-scheme:dark)').matches ? 'dark' : 'light';
+    r.setAttribute('data-theme', d);
+    const moonIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+    const sunIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+    if (t) {
+      t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
+      t.addEventListener('click', () => {
+        d = d === 'dark' ? 'light' : 'dark';
+        r.setAttribute('data-theme', d);
+        t.innerHTML = d === 'dark' ? sunIcon : moonIcon;
+        t.setAttribute('aria-label', 'Switch to ' + (d === 'dark' ? 'light' : 'dark') + ' mode');
+      });
+    }
+  })();
+</script>
+</body>
+</html>
